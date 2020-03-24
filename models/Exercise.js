@@ -17,7 +17,6 @@ const ExerciseSchema = new Schema({
         type: Number,
         unique: true,
         //required: true
-        type: Number,
     },  
     sets: {
         unique: true,
