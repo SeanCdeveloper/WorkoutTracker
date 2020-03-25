@@ -1,0 +1,20 @@
+## API Routes Needed
+
+** API.js **
+
+* [] ("/api/workouts")  |  getLastWorkout() {"GET": sort -1}, createWorkout() {"POST": create()} | api.js
+
+* [] ("/api/workouts/:id")  |  addExercise() {"PUT": _id} | api.js
+
+* [] ("/api/workouts/range) |  getWorkoutsInRange() {"GET": range}| api.js
+
+** Stats.js **
+
+* [] ("api/workouts/range) |  fetch("api/workouts/range") {"GET": range?} | stats.js
+
+** Workout.js **
+
+* [] Not Sure ? ("/api/exercises")
+
+
+
