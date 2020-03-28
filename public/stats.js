@@ -231,11 +231,13 @@ getDates = (data) => {
   data.forEach(workout => {
   //  console.log(workout);
   //  console.log(workout.day);
-    let workOutDays = workout.day;
-    // console.log(">>>>", workOutDays);
-    dates.push(workOutDays);
-    // console.log(dates);
+    let workOutDays = new Date(workout.day);
+   // console.log(">>>>", workOutDays.getDay());
+    dates.push(workOutDays.getDay());
+  //  dates.push(workOutDays);
+    console.log(dates);
     });
     return dates;
   }
 
+ 
