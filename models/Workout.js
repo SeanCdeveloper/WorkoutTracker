@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const WorkoutSchema = new Schema({
     day: {
         type: Date,
-        default: Date.now
+        default: () => new Date()
     },
     exercises: [
         {
@@ -34,10 +34,20 @@ const WorkoutSchema = new Schema({
             },
             distance: {
                 type: Number
-            }
+            }, 
+            userCreated: {
+                type: Date, 
+                default: () => new Date()
+            },
+            lastUpdated: Date
         }
     ]
 });
+
+WorkoutSchema.methods.lastUpdatedDate = function() {
+    this.lastUpdated = Date.now();
+    return this.lastUpdated;
+}
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 

@@ -37,6 +37,8 @@ function populateChart(data) {
   let durations = duration(data);
   let pounds = calculateTotalWeight(data);
   let workouts = workoutNames(data);
+  let days = getDates(data);
+  console.log(days);
   const colors = generatePalette();
 
   let line = document.querySelector("#canvas").getContext("2d");
@@ -47,15 +49,16 @@ function populateChart(data) {
   let lineChart = new Chart(line, {
     type: "line",
     data: {
-      labels: [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
+      labels: workouts,
+      // labels: [
+      //   "Sunday",
+      //   "Monday",
+      //   "Tuesday",
+      //   "Wednesday",
+      //   "Thursday",
+      //   "Friday",
+      //   "Saturday"
+      // ],
       datasets: [
         {
           label: "Workout Duration In Minutes",
@@ -95,15 +98,16 @@ function populateChart(data) {
   let barChart = new Chart(bar, {
     type: "bar",
     data: {
-      labels: [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ],
+      labels: workouts,
+      // labels: [
+      //   "Sunday",
+      //   "Monday",
+      //   "Tuesday",
+      //   "Wednesday",
+      //   "Thursday",
+      //   "Friday",
+      //   "Saturday",
+      // ],
       datasets: [
         {
           label: "Pounds",
@@ -218,6 +222,20 @@ function workoutNames(data) {
       workouts.push(exercise.name);
     });
   });
-  
-  return workouts;
+
+  return workouts;  
 }
+
+getDates = (data) => {
+  let dates = [];
+  data.forEach(workout => {
+  //  console.log(workout);
+  //  console.log(workout.day);
+    let workOutDays = workout.day;
+    // console.log(">>>>", workOutDays);
+    dates.push(workOutDays);
+    // console.log(dates);
+    });
+    return dates;
+  }
+
