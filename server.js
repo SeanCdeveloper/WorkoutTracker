@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 
 app.use(morgan("dev"));
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://SCDeveloper:SCDeveloper1@ds131782.mlab.com:31782/heroku_lwsbgsvt";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,3 +25,4 @@ app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
 });
 
+//mongodb://SCDeveloper:SCDeveloper1@ds131782.mlab.com:31782/heroku_lwsbgsvt
