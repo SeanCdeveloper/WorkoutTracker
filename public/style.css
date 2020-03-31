@@ -183,6 +183,14 @@ button {
   transition: all 1.2s;
 }
 
+#delExs {
+  float: right;
+}
+
+#delExs:hover {
+  color: red;
+}
+
 .workout-type,
 form .cardio-form div,
 form .resistance-form div {
