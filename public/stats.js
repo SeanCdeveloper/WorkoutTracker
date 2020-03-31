@@ -240,4 +240,14 @@ getDates = (data) => {
     return dates;
   }
 
- 
+ // Added 3/30/20
+ let delBtn = document.querySelector("#delExs");
+
+delBtn.addEventListener("click", deleteExercises);
+
+async function deleteExercises(event) {
+    event.preventDefault();
+    console.log(event.target);
+   API.clearAllExercises();
+   window.location.reload();
+}

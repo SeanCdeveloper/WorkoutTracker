@@ -41,6 +41,13 @@ module.exports = function (app) {
                 res.json(err);
             })
         });
+        
+// Added 3/31/20
+        app.delete("/api/workouts/clearall", (req,res) => {
+            db.Workout.remove({})
+            .then(data => res.json(data))
+            .catch(err => res.json(err));
+        })
 }
 
 

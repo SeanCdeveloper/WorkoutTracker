@@ -41,4 +41,15 @@ const API = {
 
     return json;
   },
+  async clearAllExercises(data) {
+    const res = await fetch('api/workouts/clearall', {
+      method: "DELETE", 
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" }
+    });
+    console.log(`Sent + ${res}`)
+    const json = await res.json();
+
+    return json;
+  }
 };
